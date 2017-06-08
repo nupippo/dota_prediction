@@ -1,0 +1,18 @@
+
+dta <- read.csv(file = 'C:/Users/Administrator/Downloads/dota2Dataset/dota2Train.csv')
+
+
+
+library(jsonlite)
+dota.dataset01 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3230930003")
+dota.dataset02 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3230930003")
+dota.dataset03 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3230930003")
+dota.dataset04 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3230930003")
+dota.dataset05 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3230930003")
+dota.dataset06 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3230930003")
+dota.dataset07 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3230930003")
+dota.dataset08 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3230930003")
+dota.dataset09 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3230930003")
+dota.dataset10 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3230930003")
+
+# https://api.opendota.com/api/proMatches?less_than_match_id=3230930003
