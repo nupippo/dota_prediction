@@ -1,18 +1,36 @@
-
-dta <- read.csv(file = 'C:/Users/Administrator/Downloads/dota2Dataset/dota2Train.csv')
-
-
-
 library(jsonlite)
 dota.dataset01 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3230930003")
-dota.dataset02 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3230930003")
-dota.dataset03 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3230930003")
-dota.dataset04 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3230930003")
-dota.dataset05 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3230930003")
-dota.dataset06 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3230930003")
-dota.dataset07 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3230930003")
-dota.dataset08 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3230930003")
-dota.dataset09 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3230930003")
-dota.dataset10 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3230930003")
+dota.dataset02 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3221170331")
+dota.dataset03 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3214783574")
+dota.dataset04 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3204484898")
+dota.dataset05 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3196386340")
+dota.dataset06 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3188810567")
+dota.dataset07 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3179586089")
+dota.dataset08 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3176565030")
+dota.dataset09 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3175000659")
+dota.dataset10 <- fromJSON("https://api.opendota.com/api/proMatches?less_than_match_id=3170433297")
 
 # https://api.opendota.com/api/proMatches?less_than_match_id=3230930003
+
+dta <- rbind(dota.dataset01,dota.dataset02) 
+dta <- rbind(dta,dota.dataset03)
+dta <- rbind(dta,dota.dataset04)
+dta <- rbind(dta,dota.dataset05)
+dta <- rbind(dta,dota.dataset06)
+dta <- rbind(dta,dota.dataset07)
+dta <- rbind(dta,dota.dataset08)
+dta <- rbind(dta,dota.dataset09)
+dta <- rbind(dta,dota.dataset10)
+
+# https://api.opendota.com/api/matches/{match_id}
+tmp.match <- fromJSON("https://api.opendota.com/api/matches/3230930003")
+tmp.match$picks_bans$is_pick
+tmp.match$picks_bans$hero_id
+tmp.match$picks_bans$is_pick
+
+# https://api.opendota.com/api/heroes
+hero.list <- fromJSON("https://api.opendota.com/api/heroes")
+hero.list$localized_name
+hero.list$primary_attr
+hero.list$attack_type
+
